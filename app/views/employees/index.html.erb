@@ -24,7 +24,13 @@
                 <td><%= employee.name %></td>
                 <td><%= employee.email %></td>
                 <td><%= employee.address %></td>
-                <td> <%= link_to "Delete", employee_path(employee), method: :delete, data: { confirm: "Are you sure?" } %>  </td>
+                <td>
+                    <%= link_to "Edit", edit_employee_path(employee), class:"btn btn-primary rounded-0" %>
+                    <%= link_to "View Employee", employee_path(employee), class:"btn btn-secondary rounded-0" %>
+                    <%= form_with model: employee, method: :delete, local: true do |form| %>
+                        <%= form.submit "Delete", class: "btn btn-danger rounded-0", data: { confirm: "Are you sure to delete the employee" } %>
+                      <% end %
+                </td>
             </tr>
             <% end %>
         </tbody>
