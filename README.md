@@ -12,7 +12,13 @@ The **Employee Management System** is a Ruby on Rails application that allows ma
   - Perform CRUD operations on documents.
 - **User-friendly Interface**
   - Built using Rails' MVC architecture.
-  
+
+
+![image](https://github.com/user-attachments/assets/9e4b4930-5a6d-4f9b-b2ca-c1bf096f87c7)
+
+
+![image](https://github.com/user-attachments/assets/7a796ab5-2e34-4f54-ad41-56241ce50dbd)
+
 ## Installation
 
 ### Prerequisites
