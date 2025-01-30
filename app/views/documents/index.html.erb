@@ -1,0 +1,37 @@
+<div class="col-lg-12">
+    <%= flash[:notice]=" "%>
+    <div class="card rounded-0 mb-5 mt-5">
+        <div>
+            <h2 class="text-center">Listing Documents</h2>
+        </div>
+    </div>
+    <%= link_to "Create New Document", new_document_path, class: "btn btn-primary btn-lg mb-4 rounded-0" %>
+    <table class= "table table-bordered" >
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Employee Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @documents.each do |document| %>
+            <tr>
+                <td><%= document.id %></td>
+                <td><%= document.doc_name %></td>
+                <td><%= document.doc_type %></td>
+                <td><%= document.employee.name %></td>
+                <td>
+                    <%= link_to "Edit", edit_document_path(document), class:"btn btn-primary rounded-0" %>
+                    <%= link_to "View Document", document_path(document), class:"btn btn-success rounded-0" %>
+                    <%= link_to "Delete", document_path(document), class:"btn btn-danger rounded-0", method: :delete, data: { confirm: "Are you sure to delete the employee" } %>
+                </td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+    <%= link_to "Back to Employees", employees_path, class:"btn btn-outline-primary btn-lg rounded-0 " %>
+
+</div>
